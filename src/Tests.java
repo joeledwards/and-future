@@ -1,3 +1,9 @@
+import io.cogswell.async.AsyncFuture;
+import io.cogswell.async.AsyncPromise;
+import io.cogswell.async.FailureHandler;
+import io.cogswell.async.FutureFlatMapper;
+import io.cogswell.async.FutureMapper;
+import io.cogswell.async.SuccessHandler;
 
 public class Tests {
 	public static void main(String[] args) {
@@ -22,7 +28,7 @@ public class Tests {
 		
 		f.flatMap(new FutureFlatMapper<Boolean, Integer>() {
 			public AsyncFuture<Integer> flatMap(Boolean result) {
-				return AsyncFuture.successful(result ? 1 : 0);
+				return AsyncFuture.successful(result ? 0 : 1);
 			}
 		})
 		.map(new FutureMapper<Integer, String>() {

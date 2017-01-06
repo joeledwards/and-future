@@ -1,4 +1,4 @@
-
+package io.cogswell.async;
 public class AsyncPromise<T> {
 	public final AsyncFuture<T> future = new AsyncFuture<T>();
 	
